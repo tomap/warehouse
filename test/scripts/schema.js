@@ -173,14 +173,14 @@ describe('Schema', () => {
     try {
       schema.static();
     } catch (err) {
-      err.should.eql(new TypeError('Method name is required!'));
+      err.should.deep.eql(new TypeError('Method name is required!'));
     }
 
     // without function
     try {
       schema.sttic('wtf');
     } catch (err) {
-      err.should.eql(new TypeError('Static method must be a function!'));
+      err.should.deep.eql(new TypeError('Static method must be a function!'));
     }
   });
 });
